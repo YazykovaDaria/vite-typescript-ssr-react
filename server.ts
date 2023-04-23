@@ -27,9 +27,6 @@ const getStyleSheets = async () => {
 
 async function createServer(isProd = process.env.NODE_ENV === "production") {
   const app = express();
-  // Create Vite server in middleware mode and configure the app type as
-  // 'custom', disabling Vite's own HTML serving logic so parent server
-  // can take control
   const vite = await createViteServer({
     server: { middlewareMode: true },
     appType: "custom",
